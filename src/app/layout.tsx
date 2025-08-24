@@ -4,8 +4,8 @@
  * Copyright (c) 2025 [YOUR NAME HERE]. All Rights Reserved.
  */
 
-import './globals.css';
-import React from "react";
+import '../styles/globals.css';
+import React from 'react';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono as GeistMono } from 'next/font/google';
 

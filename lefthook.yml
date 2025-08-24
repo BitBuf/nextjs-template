@@ -61,6 +61,5 @@ pre-commit:
     commit-link-rot:
       glob: '*.md'
       run: pnpm exec markdown-link-check {staged_files}
-
 # depcheck, typesync, tests, full project lint, build
 #pre-push:
