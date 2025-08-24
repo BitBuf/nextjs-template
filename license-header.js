@@ -3,9 +3,3 @@
  *
  * Copyright (c) 2025 [YOUR NAME HERE]. All Rights Reserved.
  */
-
-const config = {
-  plugins: ['@tailwindcss/postcss'],
-};
-
-export default config;

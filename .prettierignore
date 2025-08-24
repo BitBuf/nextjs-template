@@ -1,0 +1,5 @@
+# Following all entries in .gitignore by default.
+
+pnpm-lock.yaml
+pnpm-workspace.yaml
+*.md
