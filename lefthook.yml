@@ -40,3 +40,31 @@
 #
 #     - script: "hello.go"
 #       runner: go run
+
+commit-msg:
+  parallel: true
+  commands:
+    message-style:
+      run: pnpm exec commitlint --edit
+    message-spelling:
+      run: pnpm exec cspell --no-summary {1}
+
+# lint staged
+pre-commit:
+  parallel: true
+  commands:
+    commit-spelling:
+      glob: '*.{js,ts,jsx,tsx,md,json}'
+      run: pnpm exec cspell {staged_files}
+    commit-signing:
+      run: |
+        if ! git log -1 --pretty=%G? HEAD | grep -q "[GU]"; then
+          echo "❌ Commit is not signed or signature is invalid!"
+          exit 1
+        fi
+    commit-link-rot:
+      glob: '*.md'
+      run: pnpm exec markdown-link-check {staged_files}
+
+# depcheck, typesync, tests, full project lint, build
+#pre-push:
