@@ -57,11 +57,7 @@ pre-commit:
       glob: '*.{js,ts,jsx,tsx,md,json}'
       run: pnpm exec cspell {staged_files}
     commit-signing:
-      run: |
-        if ! git log -1 --pretty=%G? HEAD | grep -q "[GU]"; then
-          echo "❌ Commit is not signed or signature is invalid!"
-          exit 1
-        fi
+      run: node ./scripts/check-commit-signature.js
     commit-link-rot:
       glob: '*.md'
       run: pnpm exec markdown-link-check {staged_files}

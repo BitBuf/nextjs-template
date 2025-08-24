@@ -1,3 +1,9 @@
+/*
+ * See /license-header.js to update this file header.
+ *
+ * Copyright (c) 2025 [YOUR NAME HERE]. All Rights Reserved.
+ */
+
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   rules: {
